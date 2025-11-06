@@ -97,7 +97,8 @@ Gold Awarded: 20
 XP Gained: 15
 ```
 
-🧩 Gamification System
+## 🧩 Gamification System
+```yaml
 Rarity	XP	Gold	Example Name
 Common	+5	+5	“Whisker Draught of Mist”
 Uncommon	+8	+10	“Purr Tonic of Zephyr”
@@ -105,6 +106,6 @@ Rare	+15	+20	“Prime Sphinx Elixir of Tempest”
 Epic	+25	+35	“Triska Arc Infusion of Solaris”
 Mythic	+40	+60	“Eternal Sphinx Elixir of Thunder”
 
-💡 First-time discoveries earn a 50% gold bonus!
+💡 **First-time discoveries earn a 50% gold bonus!**
 ---
 
