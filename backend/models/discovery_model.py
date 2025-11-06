@@ -13,7 +13,6 @@ class Discovery(Base):
         awarded_gold = Column(Integer, nullable=False, default=0)
         awarded_xp = Column(Integer, nullable=False, default=0)
         first_time_discovery = Column(Boolean, nullable=False, default=False)
- 
         created_at = Column(DateTime(timezone=True), server_default=func.now())# 1 for True, 0 for False
         potion = relationship("Potion", backref="discoveries")
 

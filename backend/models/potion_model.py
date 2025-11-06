@@ -5,6 +5,7 @@ from database import Base
 from sqlalchemy.sql import func
 from sqlalchemy import DateTime
 import enum
+from sqlalchemy.orm import relationship
 
 class Rarity(str, enum.Enum):
     COMMON = "COMMON"
@@ -26,6 +27,8 @@ class Potion(Base):
         gold_award = Column(Integer)
         xp_award = Column(Integer)
         created_at = Column(DateTime(timezone=True), server_default=func.now())
+        discoveries = relationship("Discovery", backref="potion", cascade="all, delete-orphan")
+
 
         def __repr__(self):
              return f"<Potion(name='{self.name}', rarity='{self.rarity.value}', signature='{self.signature_hash[:8]}')>"
