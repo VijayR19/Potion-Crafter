@@ -50,39 +50,52 @@ _Think fantasy alchemy + API engineering + little RPG vibes._
 ```bash
 git clone https://github.com/<your-username>/Potion-Crafter.git
 cd Potion-Crafter
+```
 
 ### 2️⃣ Create a virtual environment
+```bash
 python -m venv venv
 source venv/bin/activate       # Mac/Linux
 venv\Scripts\activate          # Windows
+```
 
 ### 3️⃣ Install dependencies
+```bash
 pip install fastapi uvicorn sqlalchemy httpx python-dotenv
+```
 
 ### 4️⃣ Set up environment variables
-create .env file in backend directory
+Create a .env file in the backend directory:
+```ini
 OWM_API_KEY=your_openweathermap_api_key
+```
 
-### 5️⃣ Run the development serve
+### 5️⃣ Run the development server
+```bash
 uvicorn backend.app:app --reload
+```
 Then visit http://localhost:8000
 
-## 💫 Example Potion Craft
+### 💫 Example Potion Craft
 Input:
+```makefile
 City: London
 Number: 73
+```
 
-APIs return:
+### APIs return:
 Weather → “Light rain, 11°C”
 Cat Fact → “Cats were considered sacred in ancient Egypt.”
 Number → “73 is the 21st prime number.”
 
-Generated Potion:
+### Generated Potion:
+```vbnet
 Name: Prime Sphinx Elixir of Tempest
 Rarity: RARE
 Effects: ["Luck +2", "Focus +1"]
 Gold Awarded: 20
 XP Gained: 15
+```
 
 🧩 Gamification System
 Rarity	XP	Gold	Example Name
