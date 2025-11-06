@@ -43,8 +43,4 @@ _Think fantasy alchemy + API engineering + little RPG vibes._
 - 🔢 NumbersAPI
 
 ---
-👨‍💻 Author
-
-Built by Vijay
-Leveling up in full-stack magic one project at a time 🧑‍💻⚡️
 
