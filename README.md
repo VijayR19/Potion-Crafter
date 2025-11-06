@@ -84,10 +84,11 @@ Number: 73
 ```
 
 ### APIs return:
+```
 Weather → “Light rain, 11°C”
 Cat Fact → “Cats were considered sacred in ancient Egypt.”
 Number → “73 is the 21st prime number.”
-
+```
 ### Generated Potion:
 ```vbnet
 Name: Prime Sphinx Elixir of Tempest
