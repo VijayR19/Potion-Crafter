@@ -59,3 +59,24 @@ def seed_database(drop=True):
 
         db.add_all([p1, p2])
         db.flush()  #get potion ids
+
+        # Discoveries (history)
+        d1 = Discovery(
+            potion_id=p1.id,
+            user_id=user.id if hasattr(Discovery, "user_id") else None,
+            awarded_gold=p1.gold_award,
+            awarded_xp=p1.xp_award,
+            first_time_discovery=True
+        )
+
+        d2 = Discovery(
+            potion_id=p2.id,
+            user_id=user.id if hasattr(Discovery, "user_id") else None,
+            awarded_gold=int(p2.gold_award * 1.5),
+            awarded_xp = p2.xp_award + 5,
+            first_time_discovery=True
+            )
+        
+        db.add_all([d1, d2])
+        db.commit()
+        print("Seed data inserted successfully.")
