@@ -27,7 +27,7 @@ class Potion(Base):
         gold_award = Column(Integer)
         xp_award = Column(Integer)
         created_at = Column(DateTime(timezone=True), server_default=func.now())
-        discoveries = relationship("Discovery", backref="potion", cascade="all, delete-orphan")
+        discoveries = relationship("Discovery", back_populates="potion", cascade="all, delete-orphan")
 
 
         def __repr__(self):

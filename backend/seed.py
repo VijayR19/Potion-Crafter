@@ -1,8 +1,8 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from models.user import User
-from.models.potion_model import Rarity, Potion
+from models.user_model import User
+from models.potion_model import Rarity, Potion
 from models.discovery_model import Discovery
 
 from database import Base, DATABASE_URL
@@ -42,7 +42,7 @@ def seed_database(drop=True):
             name="Whisker Draught of Mist",
             rarity = Rarity.COMMON,
             effects=["Luck +1"],
-            essenses={"weather": "mist", "prime": False}
+            essences={"weather": "mist", "prime": False},
             signature_hash="sig_common_001",
             gold_award=5,
             xp_award=5,
@@ -51,7 +51,7 @@ def seed_database(drop=True):
             name="Prime Sphinx Elixir of Tempest",
             rarity = Rarity.RARE,
             effects=["Luck +2", "Focus +1"],
-            essenses={"weather": "rain", "prime": True, "wind": "breeze"}
+            essences={"weather": "rain", "prime": True, "wind": "breeze"},
             signature_hash="sig_rare_073",
             gold_award=20,
             xp_award=15,
