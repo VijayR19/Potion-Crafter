@@ -13,10 +13,9 @@ class User(Base):
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     avatar_url = Column(String, nullable=True)
     display_name = Column(String, nullable=True)
-    discoveries = relationship("Discovery", backref="user")
     #email = Column(String, unique=True, index=True, nullable=False)
     # hashed_password = Column(String, nullable=False)
-    discoveries = relationship("Discovery", backref="user", cascade="all, delete-orphan")
+    discoveries = relationship("Discovery",back_populates="user", cascade="all, delete-orphan")
     
 
     def __repr__(self):
