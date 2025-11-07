@@ -6,6 +6,7 @@ from models.discovery_model import Discovery
 from schemas.discovery_schema import DiscoveryRead, DiscoveryCreate
 from crud import discovery_crud
 
+# fix later
 router = APIRouter(prefix="/discoveries", tags=["discoveries"])
 # Get '/'
 @router.get("/", response_model=List[DiscoveryRead], status_code=status.HTTP_200_OK)
