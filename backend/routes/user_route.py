@@ -3,7 +3,7 @@ from fastapi import APIRouter, status
 from dependencies import db_dependency
 from fastapi import HTTPException
 
-from schemas.user_schema import UserRead
+from schemas.user_schema import UserRead, UserCreate
 from crud import user_crud
 
 router = APIRouter(prefix="/users", tags=["users"])
@@ -19,3 +19,8 @@ def read_user(user_id: int, db: db_dependency) -> UserRead:
     if user is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
     return user 
+
+# Post '/'
+@router.post("/", response_model=UserRead, status_code=status.HTTP_201_CREATED)
+def create_user(user_create: UserCreate, db: db_dependency) -> UserRead:
+    return user_crud.create_user(db, user_create)
