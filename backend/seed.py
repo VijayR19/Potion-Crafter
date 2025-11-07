@@ -80,3 +80,12 @@ def seed_database(drop=True):
         db.add_all([d1, d2])
         db.commit()
         print("Seed data inserted successfully.")
+
+    except Exception as e:
+        db.rollback()
+        print(f"Error seeding database: {e}")
+    finally:
+        db.close()
+
+if __name__ == "__main__":
+    seed_database(drop=True)
