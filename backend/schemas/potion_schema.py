@@ -2,7 +2,7 @@ from datetime import datetime
 from typing import Any, Dict, List, Optional
 
 from pydantic import BaseModel, Field, ConfigDict
-from backend.models.potion_model import Rarity, Potion
+from models.potion_model import Rarity, Potion
 
 # Base
 class PotionBase(BaseModel):
