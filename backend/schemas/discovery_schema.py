@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import Optional
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, field_serializer
 
 from schemas.potion_schema import PotionRead
 from schemas.user_schema import UserRead
@@ -26,6 +26,11 @@ class DiscoveryRead(DiscoveryBase):
     potion_id: int
     user_id: Optional[int] = None
     created_at: datetime
+
+    @field_serializer("created_at")
+    def fmt_created_at(self, v: datetime) -> str:
+        return v.strftime("%Y-%m-%d %H:%M:%S")
+
 
 # Discovery Read with Relations
 class DiscoveryReadWithRelations(DiscoveryRead):

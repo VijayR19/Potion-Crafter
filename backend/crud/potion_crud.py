@@ -16,3 +16,4 @@ def create_potion(db: Session, create_db: PotionCreate) -> Potion:
     db.commit()
     db.refresh(db_potion)
     return db_potion
+

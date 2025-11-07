@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import Any, Dict, List, Optional
 
-from pydantic import BaseModel, Field, ConfigDict
+from pydantic import BaseModel, Field, ConfigDict, field_serializer
 from models.potion_model import Rarity, Potion
 
 # Base
@@ -33,3 +33,9 @@ class PotionRead(PotionBase):
     id: int
     signature_hash: str
     created_at: datetime
+    
+    @field_serializer("created_at")
+    def fmt_created_at(self, v: datetime) -> str:
+        return v.strftime("%Y-%m-%d %H:%M:%S")
+
+
