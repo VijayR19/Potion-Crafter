@@ -47,4 +47,15 @@ def seed_database(drop=True):
             gold_award=5,
             xp_award=5,
         )
-        
+        p2 = Potion(
+            name="Prime Sphinx Elixir of Tempest",
+            rarity = Rarity.RARE,
+            effects=["Luck +2", "Focus +1"],
+            essenses={"weather": "rain", "prime": True, "wind": "breeze"}
+            signature_hash="sig_rare_073",
+            gold_award=20,
+            xp_award=15,
+        )
+
+        db.add_all([p1, p2])
+        db.flush()  #get potion ids
